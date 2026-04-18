@@ -1,29 +1,12 @@
-# compiled output
+cat > .gitignore << 'EOF'
+# Dependencies
+node_modules/
+
+# Angular
+.angular/
 /dist
 /tmp
 /out-tsc
-
-# dependencies
-/node_modules
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
-# misc
-/.angular/cache
 /.sass-cache
 /connect.lock
 /coverage
@@ -33,37 +16,35 @@ testem.log
 /typings
 /docs
 
-# e2e
-/e2e/*.js
-/e2e/*.map
-
-# System Files
-.DS_Store
-Thumbs.db
-
 # Playwright
-node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/playwright/.auth/
+**/playwright-report/
+**/test-results/
+**/blob-report/
+**/playwright/.cache/
 
-# Angular cache
-.angular/
+# Auth tokens - sensitive
+auth/
+.auth/
+**/auth/
+**/.auth/
 
-# Playwright artifacts
-playwright-report/
-test-results/
-blob-report/
-playwright/.cache/
-playwright/.auth/
-
-# Node
-node_modules/
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.sublime-workspace
 
 # System
 .DS_Store
+Thumbs.db
 
 # CI (not ready yet)
 .github/
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+EOF
